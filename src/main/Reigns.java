@@ -30,7 +30,7 @@ public class Reigns {
     public static void main(String[] args){
 
         // début du jeu
-        System.out.println("Bienvenue sur Reigns");
+        System.out.println("Bienvenue dans Reigns !");
 
         initBanqueQuestions();
 
