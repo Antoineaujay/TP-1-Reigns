@@ -31,6 +31,7 @@ public class Jauge {
         this.valeur = valeur;
     }
 
+
     /**
      * Retourne le nom de la jauge.
      *
