@@ -1,5 +1,8 @@
 package main;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class LesJauges {
     /**
      * La jauge de Clergé
@@ -44,20 +47,23 @@ public class LesJauges {
     /**
      * Affiche les jauges de Clergé, Peuple, Armée et Finances du personnage.
      */
-    public static void AfficheJauges() {
-        afficheJauge(jaugeClerge);
-        afficheJauge(jaugePeuple);
-        afficheJauge(jaugeArmee);
-        afficheJauge(jaugeFinance);
+    public static void afficherJauges() {
+        List<TypeJauge> jauges = Arrays.asList(TypeJauge.values());
+        for (TypeJauge jauge : jauges) {
+            afficheJauge(jauge);
+        }
         System.out.println();
     }
 
-    public void initJauges() {
+
+
+
+    public static void initJauges() {
         // Initialisation des jauges entre 15 et 35 points
-        jaugeClerge = new Jauge("Clergé", 15 + (int)(Math.random() * (35 - 15)));
-        jaugePeuple = new Jauge("Peuple", 15 + (int)(Math.random() * (35 - 15)));
-        jaugeArmee = new Jauge("Armée", 15 + (int)(Math.random() * (35 - 15)));
-        jaugeFinance = new Jauge("Finances", 15 + (int)(Math.random() * (35 - 15)));
+        jaugeClerge = new Jauge("Clergé", jaugeClerge.getValeur());
+        jaugePeuple = new Jauge("Peuple", jaugePeuple.getValeur());
+        jaugeArmee = new Jauge("Armée", jaugeArmee.getValeur());
+        jaugeFinance = new Jauge("Finances", jaugeFinance.getValeur());
     }
 
     /**
@@ -65,20 +71,13 @@ public class LesJauges {
      *
      * @return true si le jeu est fini, false sinon
      */
-    public static boolean finDuJeu(){
-        if(jaugeClerge.getValeur()<=0
-                || jaugeClerge.getValeur()>=50
-                || jaugePeuple.getValeur()<=0
-                || jaugePeuple.getValeur()>=50
-                || jaugeArmee.getValeur()<=0
-                || jaugeArmee.getValeur()>=50
-                || jaugeFinance.getValeur()<=0
-                || jaugeFinance.getValeur()>=50){
-            return true;
-        }else{
-            return false;
-        }
+    public static boolean finDuJeu() {
+        return jaugeClerge.getValeur() <= 0 || jaugeClerge.getValeur() >= 50
+                || jaugePeuple.getValeur() <= 0 || jaugePeuple.getValeur() >= 50
+                || jaugeArmee.getValeur() <= 0 || jaugeArmee.getValeur() >= 50
+                || jaugeFinance.getValeur() <= 0 || jaugeFinance.getValeur() >= 50;
     }
+
 
     /**
      * Retourne la jauge du clergé

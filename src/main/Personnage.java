@@ -27,6 +27,8 @@ public class Personnage {
     public Personnage(String nom, Genre genre) {
         this.nom = nom;
         this.genre = genre;
+
+        LesJauges.initJauges();
     }
 
     /**
