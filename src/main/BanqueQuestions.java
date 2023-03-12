@@ -62,4 +62,13 @@ public class BanqueQuestions {
         question5.ajouteEffetDroite(TypeJauge.PEUPLE, -3);
         questions.add(question5);
     }
+
+    /**
+     * Cette fonction permet de tirer une question aléatoire dans la banque de questions.
+     * @return Une question aléatoire
+     */
+    public static Question getQuestionAleatoire(){
+        int numQuestion = (int) (Math.random()*questions.size());
+        return questions.get(numQuestion);
+    }
 }

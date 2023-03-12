@@ -84,7 +84,7 @@ public class LesJauges {
      * Retourne la jauge du clergé
      * @return la jauge du clergé
      */
-    public Jauge getJaugeClerge() {
+    public static Jauge getJaugeClerge() {
         return jaugeClerge;
     }
 
@@ -100,7 +100,7 @@ public class LesJauges {
      * Retourne la jauge du peuple
      * @return la jauge du peuple
      */
-    public Jauge getJaugePeuple() {
+    public static Jauge getJaugePeuple() {
         return jaugePeuple;
     }
     /**
@@ -115,7 +115,7 @@ public class LesJauges {
      * Retourne la jauge de l'armée
      * @return la jauge de l'armée
      */
-    public Jauge getJaugeArmee() {
+    public static Jauge getJaugeArmee() {
         return jaugeArmee;
     }
     /**
@@ -130,7 +130,7 @@ public class LesJauges {
      * Retourne la jauge des finances
      * @return la jauge des finances
      */
-    public Jauge getJaugeFinance() {
+    public static Jauge getJaugeFinance() {
         return jaugeFinance;
     }
     /**

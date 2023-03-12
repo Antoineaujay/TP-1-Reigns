@@ -21,19 +21,20 @@ public class Question {
     /**
      * l'effet de la réponse de gauche
      */
-    protected String effetGauche;
+    protected static String effetGauche;
     /**
      * l'effet de la réponse de droite
      */
-    protected String effetDroite;
+    protected static String effetDroite;
     /**
      * les effets sur les jauges pour la réponse de gauche
      */
-    protected Map<TypeJauge, Integer> effetJaugeGauche;
+    protected static Map<TypeJauge, Integer> effetJaugeGauche;
     /**
      * les effets sur les jauges pour la réponse de droite
      */
-    protected Map<TypeJauge, Integer> effetJaugeDroite;
+    protected static Map<TypeJauge, Integer> effetJaugeDroite;
+
 
     /**
      * Construit une nouvelle question avec les informations données
@@ -49,10 +50,10 @@ public class Question {
                     String effetDroite) {
         this.nomPersonnage = nomPersonnage;
         this.question = question;
-        this.effetGauche = effetGauche;
-        this.effetDroite = effetDroite;
-        this.effetJaugeDroite = new TreeMap<>();
-        this.effetJaugeGauche = new TreeMap<>();
+        Effets.effetGauche = effetGauche;
+        Effets.effetDroite = effetDroite;
+        Effets.effetJaugeDroite = new TreeMap<>();
+        Effets.effetJaugeGauche = new TreeMap<>();
     }
 
     /**
@@ -61,12 +62,12 @@ public class Question {
     public void afficheQuestion() {
         String result = "["+nomPersonnage+"] "
                 + question
-                + "[G: "+effetGauche
-                + ",D: "+effetDroite
+                + "[G: "+Effets.effetGauche
+                + ",D: "+Effets.effetDroite
                 + "]";
         System.out.println(result);
-        System.out.println("Effet G:"+afficheEffets(effetJaugeGauche));
-        System.out.println("Effet D:"+afficheEffets(effetJaugeDroite));
+        System.out.println("Effet G:"+Effets.afficheEffets(Effets.effetJaugeGauche));
+        System.out.println("Effet D:"+afficheEffets(Effets.effetJaugeDroite));
         System.out.flush();
     }
 
@@ -76,7 +77,7 @@ public class Question {
      * @param effets La map des effets de jauge
      * @return la chaîne de caractères représentant les effets de la jauge
      */
-    private String afficheEffets(Map<TypeJauge, Integer> effets) {
+    public static String afficheEffets(Map<TypeJauge, Integer> effets) {
         StringBuilder result = new StringBuilder();
         for (Map.Entry<TypeJauge, Integer> effet : effets.entrySet()) {
             result.append("; jauge ").append(effet.getKey()).append(":");
@@ -117,23 +118,23 @@ public class Question {
         for(Map.Entry<TypeJauge,Integer> effet : effets.entrySet()){
             switch(effet.getKey()){
                 case ARMEE:
-                    personnage.getJaugeArmee().setValeur(
-                            personnage.getJaugeArmee().getValeur()
+                    LesJauges.getJaugeArmee().setValeur(
+                            LesJauges.getJaugeArmee().getValeur()
                                     +effet.getValue());
                     break;
                 case CLERGE:
-                    personnage.getJaugeClerge().setValeur(
-                            personnage.getJaugeClerge().getValeur()
+                    LesJauges.getJaugeClerge().setValeur(
+                            LesJauges.getJaugeClerge().getValeur()
                                     +effet.getValue());
                     break;
                 case FINANCE:
-                    personnage.getJaugeFinance().setValeur(
-                            personnage.getJaugeFinance().getValeur()
+                    LesJauges.getJaugeFinance().setValeur(
+                            LesJauges.getJaugeFinance().getValeur()
                                     +effet.getValue());
                     break;
                 case PEUPLE:
-                    personnage.getJaugePeuple().setValeur(
-                            personnage.getJaugePeuple().getValeur()
+                    LesJauges.getJaugePeuple().setValeur(
+                            LesJauges.getJaugePeuple().getValeur()
                                     +effet.getValue());
                     break;
             }
@@ -160,42 +161,6 @@ public class Question {
     public void ajouteEffetDroite(TypeJauge jauge,
                                   int valeur){
         effetJaugeDroite.put(jauge,valeur);
-    }
-
-    /**
-     * Retourne le nom du personnage associé à la question.
-     *
-     * @return le nom du personnage associé à la question
-     */
-    public String getNomPersonnage() {
-        return nomPersonnage;
-    }
-
-    /**
-     * Modifie le nom du personnage associé à la question.
-     *
-     * @param nomPersonnage le nouveau nom du personnage associé à la question
-     */
-    public void setNomPersonnage(String nomPersonnage) {
-        this.nomPersonnage = nomPersonnage;
-    }
-
-    /**
-     * Retourne la question.
-     *
-     * @return la question
-     */
-    public String getQuestion() {
-        return question;
-    }
-
-    /**
-     * Modifie la question.
-     *
-     * @param question la nouvelle question
-     */
-    public void setQuestion(String question) {
-        this.question = question;
     }
 
     /**
@@ -233,5 +198,44 @@ public class Question {
     public void setEffetDroite(String effetDroite) {
         this.effetDroite = effetDroite;
     }
+
+
+
+    /**
+     * Retourne le nom du personnage associé à la question.
+     *
+     * @return le nom du personnage associé à la question
+     */
+    public String getNomPersonnage() {
+        return nomPersonnage;
+    }
+
+    /**
+     * Modifie le nom du personnage associé à la question.
+     *
+     * @param nomPersonnage le nouveau nom du personnage associé à la question
+     */
+    public void setNomPersonnage(String nomPersonnage) {
+        this.nomPersonnage = nomPersonnage;
+    }
+
+    /**
+     * Retourne la question.
+     *
+     * @return la question
+     */
+    public String getQuestion() {
+        return question;
+    }
+
+    /**
+     * Modifie la question.
+     *
+     * @param question la nouvelle question
+     */
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
 
 }

@@ -20,15 +20,18 @@ public class Jauge {
      */
     protected int valeur;
 
+    private final int valeur_max;
+
     /**
      * Crée une nouvelle jauge avec le nom et la valeur spécifiés.
      *
      * @param nom Le nom de la jauge
-     * @param valeur La valeur de la jauge
+     * @param valeur_max La valeur max de la jauge
      */
-    public Jauge(String nom, int valeur){
+    public Jauge(String nom, int valeur_max){
         this.nom = nom;
-        this.valeur = valeur;
+        this.valeur_max = valeur_max;
+        this.valeur = (int) ((valeur_max *0.3) + (Math.random() * (  (valeur_max *0.7) - (valeur_max *0.3)  )));
     }
 
 

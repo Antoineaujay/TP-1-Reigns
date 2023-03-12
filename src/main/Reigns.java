@@ -3,8 +3,6 @@ package main;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static main.LesJauges.finDuJeu;
-
 /**
  * La classe Reigns représente le programme principal du jeu Reigns
  *
@@ -16,7 +14,7 @@ public class Reigns {
      * le personnage joué
      */
     private static Personnage personnage;
-
+    private static String nbTours;
 
 
     /**
@@ -32,20 +30,10 @@ public class Reigns {
         lancerJeu();
 
         // tirage des questions
-        int nbTours = 0;
-        while(!finDuJeu()){
-            nbTours++;
-            Question question = getQuestionAleatoire();
-            reponseQuestion(question);
-            LesJauges.AfficheJauges();
-        }
+        tirageQuestions();
 
         // fin du jeu
-        System.out.println(
-                personnage.getNom()
-                        + " a perdu ! Son règne a duré "
-                        +nbTours
-                        + " tours");
+        afficherFinJeu();
 
     }
 
@@ -64,6 +52,23 @@ public class Reigns {
         LesJauges.AfficheJauges();
     }
 
+    public static void tirageQuestions(){
+        int nbTours = 0;
+        while(!LesJauges.finDuJeu()){
+            nbTours++;
+            Question question = BanqueQuestions.getQuestionAleatoire();
+            reponseQuestion(question);
+            LesJauges.AfficheJauges();
+        }
+    }
+
+    public static void afficherFinJeu(){
+        System.out.println(
+                personnage.getNom()
+                        + " a perdu ! Son règne a duré "
+                        +nbTours
+                        + " tours");
+    }
 
 
     /**
@@ -104,13 +109,3 @@ public class Reigns {
         }
     }
 
-
-    /**
-     * Cette fonction permet de tirer une question aléatoire dans la banque de questions.
-     * @return Une question aléatoire
-     */
-    private static Question getQuestionAleatoire(){
-        int numQuestion = (int) (Math.random()*questions.size());
-        return questions.get(numQuestion);
-    }
-}

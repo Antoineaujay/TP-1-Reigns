@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e158a1a-5df0-4baf-8107-6e571ac3dc1c" name="Changes" comment="Les Jauges ainsi que les fonctions d'affichage et d'initialisation de ces dernières">
+    <list default="true" id="6e158a1a-5df0-4baf-8107-6e571ac3dc1c" name="Changes" comment="Suppression des jauges dans le personnage">
+      <change afterPath="$PROJECT_DIR$/src/main/Effets.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/BanqueQuestions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/BanqueQuestions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Jauge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Jauge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Personnage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Personnage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/LesJauges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/LesJauges.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Question.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Reigns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Reigns.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,16 +37,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/antoi/OneDrive/Documents/VSCode/TP-1-Reigns",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/antoi/OneDrive/Documents/VSCode/TP-1-Reigns&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Reigns" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Reigns" />
@@ -108,7 +111,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678564639726</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Suppression des jauges dans le personnage">
+      <created>1678564694652</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678564694652</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Suppression des jauges dans le personnage">
+      <created>1678564725717</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1678564725717</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -126,6 +143,17 @@
     <MESSAGE value="Affiche Reine pour toute autre valeur que Roi" />
     <MESSAGE value="Banque contenant toutes les questions" />
     <MESSAGE value="Les Jauges ainsi que les fonctions d'affichage et d'initialisation de ces dernières" />
-    <option name="LAST_COMMIT_MESSAGE" value="Les Jauges ainsi que les fonctions d'affichage et d'initialisation de ces dernières" />
+    <MESSAGE value="Suppression des jauges dans le personnage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Suppression des jauges dans le personnage" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
